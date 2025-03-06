@@ -8,6 +8,8 @@ json_encode($payload, JSON_PRETTY_PRINT);
 $fp = fopen(LOGFILE, 'w');
 //fwrite($fp, json_encode($payload, JSON_PRETTY_PRINT));
 ExecuteCmd('pwd', $fp);
+ExecuteCmd('git fetch origin', $fp);
+ExecuteCmd('git reset --hard origin/main', $fp);
 ExecuteCmd('git remote -v', $fp);
 ExecuteCmd('git remote set-url origin https://github.com/danielthalmann/webhook.git', $fp);
 ExecuteCmd('git pull', $fp);
