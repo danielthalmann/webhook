@@ -20,7 +20,7 @@ chmod(LOGFILE, 0666);
 function ExecuteCmd($cmd, $fp)
 {
     fwrite($fp, $cmd . "\n");
-    exec($cmd, $output, $retval);
+    exec($cmd . ' 2>&1', $output, $retval);
     //fwrite($fp, 'return : ' . $retval . "\n");
     if ($output) {
         foreach ($output as $line) {
