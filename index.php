@@ -1,6 +1,6 @@
 <?php
 
-const LOGFILE = 'request.log';
+const LOGFILE = 'request.txt';
 
 $payload = json_decode($_POST['payload'] ?? '{}', true);
 json_encode($payload, JSON_PRETTY_PRINT);
